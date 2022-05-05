@@ -1,16 +1,10 @@
 package com.company;
 
 public class Constable extends Humans{
-//    private int health = 100;
-//    private int stamina = 60;
-//    private int speed = 20;
-//    private int attackPower = 5;
-//
-//    private boolean running = false;
+
     private String arrest;
     private String jurisdiction; //Location
 
-    //default because it inherit from human
     public Constable() {
         this.name = "Hoa";
         this.strength = 60;
@@ -25,6 +19,13 @@ public class Constable extends Humans{
         this.attack = "attacks ";
     }
 
+    public String getArrest() {
+        return arrest;
+    }
+
+    public void setArrest(String arrest) {
+        this.arrest = arrest;
+    }
 
     public int getStrength() {
         return strength;

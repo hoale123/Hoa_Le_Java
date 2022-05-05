@@ -12,21 +12,10 @@ public abstract class Humans {
 
     protected String attack;
 
-//    public Humans(String name, int strength, int health, int stamina, int speed, int attackPower, boolean running, boolean arrested, String attack) {
-//        this.name = name;
-//        this.strength = strength;
-//        this.health = health;
-//        this.stamina = stamina;
-//        this.speed = speed;
-//        this.attackPower = attackPower;
-//        this.running = running;
-//        this.arrested = arrested;
-//        this.attack = attack;
+
+//    public Humans() {
+//
 //    }
-
-    public Humans() {
-
-    }
 
     public String getName() {
         return name;
