@@ -18,10 +18,7 @@ public class IceCream {
     }
 
 
-//    public String flavorName(){
-////        System.out.println(flavor);
-//        return flavor;
-//    }
+
     public double totalPrice(){
         return price * quantity;
     }

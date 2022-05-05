@@ -46,11 +46,7 @@ public class ConverterSwitch implements Converter{
             default:
                 monthString = "Invalid String";
         }
-//        System.out.println(monthString);
-//        return convertMonth(6);
-//        return Integer.parseInt(monthString);
         return monthString;
-//        return monthNumber;
     }
 
     @Override
@@ -82,8 +78,6 @@ public class ConverterSwitch implements Converter{
             default:
                 dayString = "Invalid String";
         }
-//        System.out.println(dayString);
-//        return Integer.parseInt(dayString);
         return dayString;
     }
 

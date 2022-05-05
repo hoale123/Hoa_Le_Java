@@ -2,7 +2,7 @@ package com.company.factory;
 
 import java.util.Objects;
 
-public class IceCream extends com.company.pointofsale.IceCream {
+public class IceCream  {
     private String flavor;
     private double salePrice;
     private double productionCost;
@@ -12,7 +12,6 @@ public class IceCream extends com.company.pointofsale.IceCream {
     private double laborCost;
 
     public IceCream(String flavor, double salePrice, double productionCost, double ingredientsCost, double laborCost) {
-        super();
         this.flavor = flavor;
         this.salePrice = salePrice;
         this.productionCost = productionCost;
@@ -20,10 +19,7 @@ public class IceCream extends com.company.pointofsale.IceCream {
         this.laborCost = laborCost;
     }
 
-//    public String flavorName(){
-////        System.out.println(flavor);
-//        return flavor;
-//    }
+
 
     public double productionCost(){
         return laborCost + ingredientsCost;
