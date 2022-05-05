@@ -29,7 +29,7 @@ public class CustomerApp {
         billingAddress.setState("Georgia");
         billingAddress.setZipcode("67890");
 
-        customer.setShippingAddress(billingAddress);
+        customer.setShippingAddress(shippingAddress);
 
         customer.setBillingAddress(billingAddress);
         System.out.println(customer);
