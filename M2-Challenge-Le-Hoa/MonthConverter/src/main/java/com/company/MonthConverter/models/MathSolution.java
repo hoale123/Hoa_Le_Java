@@ -8,7 +8,7 @@ public class MathSolution {
 
     @NotNull(message = "operand1 is anEmpty values")
     private Integer operand1;
-    @NegativeOrZero(message = "Can not divide by Zero")
+
     @NotNull(message = "operand2 is an Empty values")
     private Integer operand2;
 
