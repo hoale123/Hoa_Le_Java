@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-
+// Code taken from SMU Cognizant class.
 @RestControllerAdvice
 public class ControllerExceptionHandler {
 
