@@ -3,7 +3,6 @@ package com.company.MonthConverter.controllers;
 import com.company.MonthConverter.models.Month;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.util.Random;
 
@@ -27,37 +26,23 @@ public class MonthConverterController {
 };
 
 
-    @RequestMapping(value = "/month/{number}", method = RequestMethod.GET)
+    @RequestMapping(value = "/month/{monthNumber}", method = RequestMethod.GET)
     @ResponseStatus(value = HttpStatus.OK)
-    public String getMonth(@PathVariable String number) {
-        switch (number) {
-            case "1" :
-                return "January";
-            case "2" :
-                return "February";
-            case "3" :
-                return "March";
-            case "4" :
-                return "April";
-            case "5" :
-                return "May";
-            case "6" :
-                return "June";
-            case "7" :
-                return "July";
-            case "8" :
-                return "August";
-            case "9" :
-                return "September";
-            case "10" :
-                return "October";
-            case "11" :
-                return "November";
-            case "12" :
-                return "December";
-            default:
-                throw new ResponseStatusException(HttpStatus.FORBIDDEN, "invalid month");
+    public Month getMonthById(@PathVariable int monthNumber) {
+        Month monthByNumbers = null;
+
+        for(Month month : months) {
+            if(month.getNumber() == monthNumber) {
+                monthByNumbers = month;
+                break;
+            }
         }
+
+        if (monthNumber<1 || monthNumber >12) {
+            throw new IllegalArgumentException("Please enter a number from 1-12");
+        }
+
+        return months[monthByNumbers.getNumber()-1];
     }
 
     @RequestMapping(value="/randomMonth", method= RequestMethod.GET)

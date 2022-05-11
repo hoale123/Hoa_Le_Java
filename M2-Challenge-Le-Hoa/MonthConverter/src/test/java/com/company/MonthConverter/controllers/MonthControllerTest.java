@@ -1,5 +1,6 @@
 package com.company.MonthConverter.controllers;
 
+import com.company.MonthConverter.models.Month;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -23,16 +24,28 @@ public class MonthControllerTest {
 
     @Test
     public void shouldReturnMonthWithNumberBetween1and12() throws Exception {
+        Month month = new Month();
+        month.setNumber(2);
+        month.setName("February");
+
+        String outputJson = mapper.writeValueAsString(month);
         mockMvc.perform(get("/month/2"))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(content().string("February"));
+                .andExpect(content().json(outputJson));
     }
 
     @Test
-    public void shouldReturnWithAStatusOf403ForbiddenStatusWithANumNotBetween1And12() throws Exception{
+    public void shouldReturnWithAStatusOf422IllegalArgumentWithANumberNotBetween1And12() throws Exception{
         mockMvc.perform(get("/month/100"))
                 .andDo(print())
-                .andExpect(status().isForbidden());
+                .andExpect(status().isUnprocessableEntity());
+    }
+
+    @Test
+    public void shouldReturnRandomMonthWithNumber() throws Exception{
+        mockMvc.perform(get("/randomMonth"))
+                .andDo(print())
+                .andExpect(status().isOk());
     }
 }

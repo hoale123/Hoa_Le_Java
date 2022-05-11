@@ -10,6 +10,10 @@ public class Month {
         this.name = name;
     }
 
+    public Month() {
+
+    }
+
     public int getNumber() {
         return number;
     }
