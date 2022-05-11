@@ -85,12 +85,10 @@ public class MathSolutionController {
 
         if (inputOperand1 == null || inputOperand2 == null){
             throw new NumberFormatException("Value is not a number or blank");
-        }else if (inputOperand1 == 0 || inputOperand2 == 0){
-            throw new ArithmeticException("can't divide by zero");
         }
-//       if (inputOperand1 == 0 || inputOperand2 == 0){
-//           throw new IllegalArgumentException("IllegalArgument of 0.");
-//       }
+        if (inputOperand2 == 0){
+            throw new IllegalArgumentException("can't divide by zero");
+        }
 
         mathSolution.setOperand1(inputOperand1);
         mathSolution.setOperand2(inputOperand2);
