@@ -54,11 +54,8 @@ public class MathSolutionControllerTest {
     public void shouldReturnErrorCode422InvalidRequestMissingOperandAdd() throws Exception{
         MathSolution inputs = new MathSolution();
         inputs.setOperand1(25);
-//        inputs.setOperand2(5);
-
 
         String inputJson = mapper.writeValueAsString(inputs);
-
 
         mockMvc.perform(post("/add")
                         .content(inputJson)
@@ -97,8 +94,6 @@ public class MathSolutionControllerTest {
     public void shouldReturnErrorCode422InvalidRequestMissingOperandSubtract() throws Exception{
         MathSolution inputs = new MathSolution();
         inputs.setOperand1(25);
-//        inputs.setOperand2(5);
-
 
         String inputJson = mapper.writeValueAsString(inputs);
 
@@ -140,8 +135,6 @@ public class MathSolutionControllerTest {
     public void shouldReturnErrorCode422InvalidRequestMissingOperandMultiply() throws Exception{
         MathSolution inputs = new MathSolution();
         inputs.setOperand1(25);
-//        inputs.setOperand2(5);
-
 
         String inputJson = mapper.writeValueAsString(inputs);
 
@@ -154,7 +147,6 @@ public class MathSolutionControllerTest {
                 .andDo(print())
                 .andExpect(status().isUnprocessableEntity());
     }
-
 
     //Divide
     @Test
@@ -183,8 +175,6 @@ public class MathSolutionControllerTest {
     public void shouldReturnErrorCode422InvalidRequestMissingOperandDivide() throws Exception{
         MathSolution inputs = new MathSolution();
         inputs.setOperand1(25);
-//        inputs.setOperand2(5);
-
 
         String inputJson = mapper.writeValueAsString(inputs);
 
